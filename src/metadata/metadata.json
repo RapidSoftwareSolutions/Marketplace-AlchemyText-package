@@ -7,8 +7,7 @@
   "accounts": {
     "domain": "alchemyapi.com",
     "credentials": [
-      "apiKey",
-      "url"
+      "apiKey"
     ]
   },
   "blocks": [

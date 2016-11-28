@@ -16,9 +16,9 @@ Analyze an HTML, URL or TEXT with multiple text analysis operations.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
@@ -29,7 +29,7 @@ Get author names from a webpage.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 
@@ -40,9 +40,9 @@ Extract concepts from text of an HTML document, webpage URL or plain TEXT. Suppo
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | maxRetrieve   | String     | Optional: Maximum number of concepts to extract (default = 8, maximum = 50)
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -59,7 +59,7 @@ Extract dates from text of an HTML document, webpage URL or plain TEXT. Supporte
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
 | text          | String     | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
@@ -73,9 +73,9 @@ Detect emotions implied in the text of an HTML document, webpage URL or plain TE
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -89,7 +89,7 @@ Detect emotions directed toward targeted phrases in an HTML document, webpage UR
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
 | text          | String     | Optional: Text content. Required if html and url parameters not provided.
 | targets       | String     | Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
@@ -106,9 +106,9 @@ Extract entities from an HTML document, webpage URL or plain TEXT. Supported lan
 | Field             | Type       | Description
 |-------------------|------------|----------
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
-| html              | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html              | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url               | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text              | String     | Optional: Text content. Required if html and url parameters not provided.
+| text              | File       | Optional: Text content. Required if html and url parameters not provided.
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
 | model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. You can also choose from the following public models: en-news - trained on English news content; es-news - trained on Spanish news content; ar-news - trained on Arabic news content. Note: input text is truncated to 5 KB for custom models calls.
 | urlForResponse    | String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
@@ -132,7 +132,7 @@ Extract RSS/ATOM feed links from an HTML document or webpage URL.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 
@@ -143,9 +143,9 @@ Extract keywords from an HTML document, webpage URL or plain TEXT. Supported lan
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | maxRetrieve   | String     | Optional: Maximum number of keywords to return (default = 50)
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -163,9 +163,9 @@ Detect the language of an HTML document, webpage URL or plain TEXT.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -179,7 +179,7 @@ Extract microformats from an HTML document or webpage URL.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 
@@ -190,7 +190,7 @@ Get the publication date of an HTML document or webpage URL.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 
@@ -201,9 +201,9 @@ Extract Subject-Action-Object relations from an HTML document, webpage URL or pl
 | Field                   | Type       | Description
 |-------------------------|------------|----------
 | apiKey                  | credentials| Required: API key obtained from AlchemyAPI.
-| html                    | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html                    | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url                     | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text                    | String     | Optional: Text content. Required if html and url parameters not provided.
+| text                    | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse          | String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | maxRetrieve             | String     | Optional: Maximum number of entities to return (default = 50, maximum = 100).
 | keywords                | String     | Optional: Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.
@@ -227,9 +227,9 @@ Use custom models to identify typed relations between detected entities in HTML 
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | model         | String     | Optional: The unique alphanumeric identifier for your custom model. You can also choose from the following public models: en-news - trained on English news content; es-news - trained on Spanish news content; ar-news - trained on Arabic news content.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -241,9 +241,9 @@ Analyze the overall sentiment of HTML document, webpage URL or plain TEXT. Suppo
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -257,9 +257,9 @@ Analyze sentiment for targeted phrases in HTML document, webpage URL or plain TE
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -274,9 +274,9 @@ Categorize an HTML document, webpage or plain text into a 5-level taxonomy. Supp
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url and text parameters not provided.
+| html          | File       | Optional: HTML content. Required if url and text parameters not provided.
 | url           | String     | Optional: HTTP URL. Required if html and text parameters not provided.
-| text          | String     | Optional: Text content. Required if html and url parameters not provided.
+| text          | File       | Optional: Text content. Required if html and url parameters not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -290,7 +290,7 @@ Extract primary text content from a webpage or from an HTML document. Cleaned pa
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -307,7 +307,7 @@ Extract the plain text from a webpage or from an HTML document.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 
@@ -318,7 +318,7 @@ Extract the page title from a webpage or from an HTML document.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Optional: HTML content. Required if url parameter not provided.
+| html          | File       | Optional: HTML content. Required if url parameter not provided.
 | url           | String     | Optional: HTTP URL. Required if html parameter not provided.
 | urlForResponse| String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter.
 | useMetadata   | String     | Optional: 1 or 0. Whether to use title information from the web page metadata (default = 1: enabled).

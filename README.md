@@ -16,7 +16,7 @@ Analyze an HTML with multiple text analysis operations.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
@@ -38,7 +38,7 @@ Analyze a TEXT with multiple text analysis operations.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with Text content.
+| text          | File       | Required: File with Text content.
 | extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
@@ -49,7 +49,7 @@ Get author names from an HTML document.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: File with HTML content.
+| html  | File       | Required: File with HTML content.
 | url   | String     | Optional: Input here will appear as the url value in the response.
 
 
@@ -68,7 +68,7 @@ Extract concepts from text of an HTML document. Supported languages: English, Sp
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | maxRetrieve   | String     | Optional: Maximum number of concepts to extract (default = 8, maximum = 50)
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -101,7 +101,7 @@ Extract concepts from plain text. Supported languages: English, Spanish
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | maxRetrieve   | String     | Optional: Maximum number of concepts to extract (default = 8, maximum = 50)
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -115,7 +115,7 @@ Extract dates from an HTML content. Supported languages: English
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | anchorDate    | String     | Optional: The date to use as "today" when interpreting phrases in the text like "next tuesday.". Format: yyyy-mm-dd hh:mm:ss
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -149,7 +149,7 @@ Detect emotions implied in the text of an HTML document. Supported languages: En
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -176,7 +176,7 @@ Detect emotions implied in plain text. Supported languages: English
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
@@ -187,7 +187,7 @@ Detect emotions directed toward targeted phrases in an HTML document. Supported 
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | targets       | String     | Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -227,7 +227,7 @@ Extract entities from an HTML document. Supported languages: English, French, Ge
 | Field             | Type       | Description
 |-------------------|------------|----------
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
-| html              | String     | Required: File with HTML content.
+| html              | File       | Required: File with HTML content.
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
 | model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details.
 | url               | String     | Optional: Input here will appear as the url value in the response.
@@ -274,7 +274,7 @@ Extract entities from plain text. Supported languages: English, French, German, 
 | Field             | Type       | Description
 |-------------------|------------|----------
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
-| text              | String     | Required: File with text content.
+| text              | File       | Required: File with text content.
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
 | model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details.
 | coreference       | String     | Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).
@@ -294,7 +294,7 @@ Extract RSS/ATOM feed links from an HTML document.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: File with HTML content.
+| html  | File       | Required: File with HTML content.
 | url   | String     | Optional: Input here will appear as the url value in the response.
 
 
@@ -304,7 +304,7 @@ Extract RSS/ATOM feed links from a webpage.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| url   | String     | Required: File with HTML content.
+| url   | String     | Required: HTTP URL.
 
 
 ## AlchemyText.getRankedKeywordsFromHtml
@@ -313,7 +313,7 @@ Extract keywords from an HTML document. Supported languages: English, French, Ge
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | maxRetrieve   | String     | Optional: Maximum number of keywords to return (default = 50)
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -348,7 +348,7 @@ Extract keywords from a webpage. Supported languages: English, French, German, I
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | maxRetrieve   | String     | Optional: Maximum number of keywords to return (default = 50)
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | knowledgeGraph| String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -363,7 +363,7 @@ Detect the language of an HTML document.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -390,7 +390,7 @@ Detect the language of plain text.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
@@ -401,7 +401,7 @@ Extract microformats from an HTML document.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: File with HTML content.
+| html  | File       | Required: File with HTML content.
 | url   | String     | Optional: Input here will appear as the url value in the response.
 
 
@@ -411,7 +411,7 @@ Extract microformats from a webpage.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: HTTP URL.
+| url   | String     | Required: HTTP URL.
 
 
 ## AlchemyText.getPublicationDateFromHtml
@@ -420,7 +420,7 @@ Get the publication date of an HTML document.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: File with HTML content.
+| html  | File       | Required: File with HTML content.
 | url   | String     | Optional: Input here will appear as the url value in the response.
 
 
@@ -439,7 +439,7 @@ Extract Subject-Action-Object relations from an HTML document. Supported languag
 | Field                   | Type       | Description
 |-------------------------|------------|----------
 | apiKey                  | credentials| Required: API key obtained from AlchemyAPI.
-| html                    | String     | Required: File with HTML content.
+| html                    | File       | Required: File with HTML content.
 | url                     | String     | Optional: Input here will appear as the url value in the response.
 | maxRetrieve             | String     | Optional: Maximum number of entities to return (default = 50, maximum = 100).
 | keywords                | String     | Optional: Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.
@@ -486,7 +486,7 @@ Extract Subject-Action-Object relations from plain text. Supported languages: En
 | Field                   | Type       | Description
 |-------------------------|------------|----------
 | apiKey                  | credentials| Required: API key obtained from AlchemyAPI.
-| text                    | String     | Required: File with text content.
+| text                    | File       | Required: File with text content.
 | url                     | String     | Optional: Input here will appear as the url value in the response.
 | maxRetrieve             | String     | Optional: Maximum number of entities to return (default = 50, maximum = 100).
 | keywords                | String     | Optional: Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.
@@ -507,7 +507,7 @@ Use custom models to identify typed relations between detected entities in HTML 
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | model         | String     | Optional: The unique alphanumeric identifier for your custom model. You can also choose from the following public models: en-news: trained on English news content (default); es-news: trained on Spanish news content; ar-news: trained on Arabic news content.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -530,7 +530,7 @@ Use custom models to identify typed relations between detected entities in plain
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | model         | String     | Optional: The unique alphanumeric identifier for your custom model. You can also choose from the following public models: en-news: trained on English news content (default); es-news: trained on Spanish news content; ar-news: trained on Arabic news content.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -542,7 +542,7 @@ Analyze the overall sentiment of HTML document. Supported languages: Arabic, Eng
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response..
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -569,7 +569,7 @@ Analyze the overall sentiment of plain text. Supported languages: Arabic, Englis
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
 
@@ -579,7 +579,7 @@ Analyze sentiment for targeted phrases in an HTML document. Supported languages:
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -608,7 +608,7 @@ Analyze sentiment for targeted phrases in plain text. Supported languages: Arabi
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
@@ -620,7 +620,7 @@ Categorize an HTML document into a 5-level taxonomy. Supported languages: Englis
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
@@ -647,7 +647,7 @@ Categorize plain text into a 5-level taxonomy. Supported languages: English.
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| text          | String     | Required: File with text content.
+| text          | File       | Required: File with text content.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
 
@@ -657,7 +657,7 @@ Extract primary text content from an HTML document. Cleaned page text is obtaine
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
-| html          | String     | Required: File with HTML content.
+| html          | File       | Required: File with HTML content.
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | extractLinks  | String     | Optional: Set this to 1 to include hyperlinks in the extracted text.
@@ -688,7 +688,7 @@ Extract the plain text from an HTML document.
 | Field | Type       | Description
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
-| html  | String     | Required: File with HTML content.
+| html  | File       | Required: File with HTML content.
 | url   | String     | Optional: Input here will appear as the url value in the response.
 
 
@@ -707,7 +707,7 @@ Extract the page title from an HTML document.
 | Field      | Type       | Description
 |------------|------------|----------
 | apiKey     | credentials| Required: API key obtained from AlchemyAPI.
-| html       | String     | Required: File with HTML content.
+| html       | File       | Required: File with HTML content.
 | url        | String     | Optional: Input here will appear as the url value in the response.
 | useMetadata| String     | Optional: 1 or 0. Whether to use title information from the web page metadata (default = 1: enabled).
 

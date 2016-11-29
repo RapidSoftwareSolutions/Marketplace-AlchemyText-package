@@ -22,7 +22,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -94,7 +94,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with Text content."
         },
         {
@@ -130,7 +130,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -187,7 +187,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -314,7 +314,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -365,7 +365,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -478,7 +478,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -575,7 +575,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -611,7 +611,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -754,7 +754,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -951,7 +951,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -1032,7 +1032,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1064,7 +1064,7 @@
         {
           "name": "url",
           "type": "String",
-          "info": "Required: File with HTML content."
+          "info": "Required: HTTP URL."
         }
       ],
       "callbacks": [
@@ -1089,7 +1089,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1226,7 +1226,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -1282,7 +1282,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1379,7 +1379,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -1415,7 +1415,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1445,7 +1445,7 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
+          "name": "url",
           "type": "String",
           "info": "Required: HTTP URL."
         }
@@ -1472,7 +1472,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1529,7 +1529,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1726,7 +1726,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -1812,7 +1812,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -1889,7 +1889,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -1930,7 +1930,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -2027,7 +2027,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -2058,7 +2058,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -2165,7 +2165,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -2206,7 +2206,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -2303,7 +2303,7 @@
         },
         {
           "name": "text",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with text content."
         },
         {
@@ -2334,7 +2334,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -2451,7 +2451,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {
@@ -2508,7 +2508,7 @@
         },
         {
           "name": "html",
-          "type": "String",
+          "type": "File",
           "info": "Required: File with HTML content."
         },
         {

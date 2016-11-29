@@ -12,8 +12,8 @@
   },
   "blocks": [
     {
-      "name": "getCombinedData",
-      "description": "Analyze an HTML, URL or TEXT with multiple text analysis operations.",
+      "name": "getCombinedDataFromHtml",
+      "description": "Analyze an HTML with multiple text analysis operations.",
       "args": [
         {
           "name": "apiKey",
@@ -22,18 +22,8 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
-          "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "info": "Required: File with HTML content."
         },
         {
           "name": "extract",
@@ -58,8 +48,8 @@
       ]
     },
     {
-      "name": "getAuthors",
-      "description": "Get author names from a webpage.",
+      "name": "getCombinedDataFromUrl",
+      "description": "Analyze an URL with multiple text analysis operations.",
       "args": [
         {
           "name": "apiKey",
@@ -67,19 +57,19 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
-        },
-        {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
+          "info": "Required: HTTP URL."
         },
         {
-          "name": "urlForResponse",
+          "name": "extract",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title"
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response"
         }
       ],
       "callbacks": [
@@ -94,8 +84,44 @@
       ]
     },
     {
-      "name": "getRankedConcepts",
-      "description": "Extract concepts from text of an HTML document, webpage URL or plain TEXT. Supported languages: English, Spanish",
+      "name": "getCombinedDataFromText",
+      "description": "Analyze a TEXT with multiple text analysis operations.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with Text content."
+        },
+        {
+          "name": "extract",
+          "type": "String",
+          "info": "Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title"
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAuthorsFromHtml",
+      "description": "Get author names from an HTML document.",
       "args": [
         {
           "name": "apiKey",
@@ -104,23 +130,70 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
+          "info": "Optional: Input here will appear as the url value in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
         },
         {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAuthorsFromUrl",
+      "description": "Get author names from a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "urlForResponse",
+          "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Required: HTTP URL."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedConceptsFromHtml",
+      "description": "Extract concepts from text of an HTML document. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "maxRetrieve",
@@ -170,8 +243,120 @@
       ]
     },
     {
-      "name": "extractDates",
-      "description": "Extract dates from text of an HTML document, webpage URL or plain TEXT. Supported languages: English",
+      "name": "getRankedConceptsFromUrl",
+      "description": "Extract concepts from a webpage. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "maxRetrieve",
+          "type": "String",
+          "info": "Optional: Maximum number of concepts to extract (default = 8, maximum = 50)"
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedConceptsFromText",
+      "description": "Extract concepts from plain text. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "maxRetrieve",
+          "type": "String",
+          "info": "Optional: Maximum number of concepts to extract (default = 8, maximum = 50)"
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "extractDatesFromHtml",
+      "description": "Extract dates from an HTML content. Supported languages: English",
       "args": [
         {
           "name": "apiKey",
@@ -180,23 +365,13 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "String",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "anchorDate",
@@ -221,8 +396,80 @@
       ]
     },
     {
-      "name": "getEmotion",
-      "description": "Detect emotions implied in the text of an HTML document, webpage URL or plain TEXT. Supported languages: English",
+      "name": "extractDatesFromUrl",
+      "description": "Extract dates from a webpage. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "anchorDate",
+          "type": "String",
+          "info": "Optional: The date to use as \"today\" when interpreting phrases in the text like \"next tuesday.\". Format: yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "extractDatesFromText",
+      "description": "Extract dates from plain text. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: Text content."
+        },
+        {
+          "name": "anchorDate",
+          "type": "String",
+          "info": "Optional: The date to use as \"today\" when interpreting phrases in the text like \"next tuesday.\". Format: yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getEmotionFromHtml",
+      "description": "Detect emotions implied in the text of an HTML document. Supported languages: English",
       "args": [
         {
           "name": "apiKey",
@@ -231,23 +478,13 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "showSourceText",
@@ -282,8 +519,90 @@
       ]
     },
     {
-      "name": "getTargetedEmotion",
-      "description": "Detect emotions directed toward targeted phrases in an HTML document, webpage URL or plain TEXT. Supported languages: English",
+      "name": "getEmotionFromUrl",
+      "description": "Detect emotions implied in the text on a webpage. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getEmotionFromText",
+      "description": "Detect emotions implied in plain text. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTargetedEmotionFromHtml",
+      "description": "Detect emotions directed toward targeted phrases in an HTML document. Supported languages: English",
       "args": [
         {
           "name": "apiKey",
@@ -292,18 +611,8 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
-          "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "String",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "info": "Required: File with HTML content."
         },
         {
           "name": "targets",
@@ -311,7 +620,7 @@
           "info": "Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
         },
         {
-          "name": "urlForResponse",
+          "name": "url",
           "type": "String",
           "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
         },
@@ -348,8 +657,95 @@
       ]
     },
     {
-      "name": "getRankedNamedEntities",
-      "description": "Extract entities from an HTML document, webpage URL or plain TEXT. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish",
+      "name": "getTargetedEmotionFromUrl",
+      "description": "Detect emotions directed toward targeted phrases on webpage. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL"
+        },
+        {
+          "name": "targets",
+          "type": "String",
+          "info": "Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTargetedEmotionFromText",
+      "description": "Detect emotions directed toward targeted phrases in text. Supported languages: English",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: Text content."
+        },
+        {
+          "name": "targets",
+          "type": "String",
+          "info": "Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedNamedEntitiesFromHtml",
+      "description": "Extract entities from an HTML document. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish",
       "args": [
         {
           "name": "apiKey",
@@ -358,18 +754,8 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
-          "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "info": "Required: File with HTML content."
         },
         {
           "name": "maxRetrieve",
@@ -382,9 +768,9 @@
           "info": "Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details."
         },
         {
-          "name": "urlForResponse",
+          "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "coreference",
@@ -459,8 +845,8 @@
       ]
     },
     {
-      "name": "getFeedLinks",
-      "description": "Extract RSS/ATOM feed links from an HTML document or webpage URL.",
+      "name": "getRankedNamedEntitiesFromUrl",
+      "description": "Extract entities from a webpage. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish",
       "args": [
         {
           "name": "apiKey",
@@ -468,19 +854,79 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
-        },
-        {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
+          "info": "Required: HTTP URL"
         },
         {
-          "name": "urlForResponse",
+          "name": "maxRetrieve",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Optional: Maximum number of entities to return (default = 50)"
+        },
+        {
+          "name": "model",
+          "type": "String",
+          "info": "Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details."
+        },
+        {
+          "name": "coreference",
+          "type": "String",
+          "info": "Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default)."
+        },
+        {
+          "name": "disambiguate",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide entity disambiguation information in the response."
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "quotations",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include quotations that are linked to detected entities."
+        },
+        {
+          "name": "emotion",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "structuredEntities",
+          "type": "String",
+          "info": "Optional: Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
         }
       ],
       "callbacks": [
@@ -495,8 +941,89 @@
       ]
     },
     {
-      "name": "getRankedKeywords",
-      "description": "Extract keywords from an HTML document, webpage URL or plain TEXT. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.",
+      "name": "getRankedNamedEntitiesFromText",
+      "description": "Extract entities from plain text. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "maxRetrieve",
+          "type": "String",
+          "info": "Optional: Maximum number of entities to return (default = 50)"
+        },
+        {
+          "name": "model",
+          "type": "String",
+          "info": "Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details."
+        },
+        {
+          "name": "coreference",
+          "type": "String",
+          "info": "Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default)."
+        },
+        {
+          "name": "disambiguate",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide entity disambiguation information in the response."
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "quotations",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include quotations that are linked to detected entities."
+        },
+        {
+          "name": "emotion",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "structuredEntities",
+          "type": "String",
+          "info": "Optional: Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFeedLinksFromHtml",
+      "description": "Extract RSS/ATOM feed links from an HTML document.",
       "args": [
         {
           "name": "apiKey",
@@ -505,18 +1032,65 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
+          "info": "Optional: Input here will appear as the url value in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
         },
         {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFeedLinksFromUrl",
+      "description": "Extract RSS/ATOM feed links from a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedKeywordsFromHtml",
+      "description": "Extract keywords from an HTML document. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "maxRetrieve",
@@ -524,9 +1098,9 @@
           "info": "Optional: Maximum number of keywords to return (default = 50)"
         },
         {
-          "name": "urlForResponse",
+          "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "knowledgeGraph",
@@ -576,8 +1150,8 @@
       ]
     },
     {
-      "name": "getLanguage",
-      "description": "Detect the language of an HTML document, webpage URL or plain TEXT.",
+      "name": "getRankedKeywordsFromUrl",
+      "description": "Extract keywords from a webpage. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.",
       "args": [
         {
           "name": "apiKey",
@@ -585,24 +1159,29 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
+          "info": "Required: HTTP URL."
         },
         {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
-        },
-        {
-          "name": "urlForResponse",
+          "name": "maxRetrieve",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Maximum number of keywords to return (default = 50)"
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "emotion",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge."
         },
         {
           "name": "showSourceText",
@@ -637,105 +1216,326 @@
       ]
     },
     {
-      "name": "getMicroformatData",
-      "description": "Extract microformats from an HTML document or webpage URL.",
+      "name": "getRankedKeywordsFromText",
+      "description": "Extract keywords from a webpage. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.",
       "args": [
         {
           "name": "apiKey",
           "type": "credentials",
           "info": "Required: API key obtained from AlchemyAPI."
-        },
-        {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
-        },
-        {
-          "name": "url",
-          "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getPublicationDate",
-      "description": "Get the publication date of an HTML document or webpage URL.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Required: API key obtained from AlchemyAPI."
-        },
-        {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
-        },
-        {
-          "name": "url",
-          "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getRelations",
-      "description": "Extract Subject-Action-Object relations from an HTML document, webpage URL or plain TEXT. Supported languages: English, Spanish",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Required: API key obtained from AlchemyAPI."
-        },
-        {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
-          "name": "url",
-          "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
         },
         {
           "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "type": "String",
+          "info": "Required: File with text content."
         },
         {
-          "name": "urlForResponse",
+          "name": "maxRetrieve",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Maximum number of keywords to return (default = 50)"
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "emotion",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguageFromHtml",
+      "description": "Detect the language of an HTML document.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguageFromUrl",
+      "description": "Detect the language of a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguageFromText",
+      "description": "Detect the language of plain text.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMicroformatDataFromHtml",
+      "description": "Extract microformats from an HTML document.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMicroformatDataFromUrl",
+      "description": "Extract microformats from a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPublicationDateFromHtml",
+      "description": "Get the publication date of an HTML document.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPublicationDateFromUrl",
+      "description": "Get the publication date of a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRelationsFromHtml",
+      "description": "Extract Subject-Action-Object relations from an HTML document. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "maxRetrieve",
@@ -820,8 +1620,190 @@
       ]
     },
     {
-      "name": "getTypedRelations",
-      "description": "Use custom models to identify typed relations between detected entities in HTML document, webpage URL or plain TEXT. Source text in Typed Relations calls is truncated to 5 KB. Typed relations identify different types of connections between detected entities. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results for your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio.",
+      "name": "getRelationsFromUrl",
+      "description": "Extract Subject-Action-Object relations from a webpage. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "maxRetrieve",
+          "type": "String",
+          "info": "Optional: Maximum number of entities to return (default = 50, maximum = 100)."
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "Optional: Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge."
+        },
+        {
+          "name": "entities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to identify named entities in detected relations. This incurs an additional transaction charge."
+        },
+        {
+          "name": "requireEntities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to restrict results to relations that contain at least one named entity."
+        },
+        {
+          "name": "coreference",
+          "type": "String",
+          "info": "Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default)."
+        },
+        {
+          "name": "disambiguate",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide entity disambiguation information in the response."
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each result. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentimentExcludeEntities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to exclude named entity text from sentiment analysis. For exapmle, do not analyze \"New\" in \"New York\"."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRelationsFromText",
+      "description": "Extract Subject-Action-Object relations from plain text. Supported languages: English, Spanish",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "maxRetrieve",
+          "type": "String",
+          "info": "Optional: Maximum number of entities to return (default = 50, maximum = 100)."
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "Optional: Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge."
+        },
+        {
+          "name": "entities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to identify named entities in detected relations. This incurs an additional transaction charge."
+        },
+        {
+          "name": "requireEntities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to restrict results to relations that contain at least one named entity."
+        },
+        {
+          "name": "coreference",
+          "type": "String",
+          "info": "Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default)."
+        },
+        {
+          "name": "disambiguate",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide entity disambiguation information in the response."
+        },
+        {
+          "name": "knowledgeGraph",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge."
+        },
+        {
+          "name": "linkedData",
+          "type": "String",
+          "info": "Optional: Set this to 0 to hide Linked Data content links in the response."
+        },
+        {
+          "name": "sentiment",
+          "type": "String",
+          "info": "Optional: Set this to 1 to analyze the sentiment towards each result. This incurs an additional transaction charge."
+        },
+        {
+          "name": "sentimentExcludeEntities",
+          "type": "String",
+          "info": "Optional: Set this to 1 to exclude named entity text from sentiment analysis. For exapmle, do not analyze \"New\" in \"New York\"."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTypedRelationsFromHtml",
+      "description": "Use custom models to identify typed relations between detected entities in HTML document. Source text in Typed Relations calls is truncated to 5 KB. Typed relations identify different types of connections between detected entities. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results for your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio.",
       "args": [
         {
           "name": "apiKey",
@@ -830,23 +1812,13 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "model",
@@ -871,8 +1843,85 @@
       ]
     },
     {
-      "name": "getTextSentiment",
-      "description": "Analyze the overall sentiment of HTML document, webpage URL or plain TEXT. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
+      "name": "getTypedRelationsFromUrl",
+      "description": "Use custom models to identify typed relations between detected entities from a webpage. Source text in Typed Relations calls is truncated to 5 KB. Typed relations identify different types of connections between detected entities. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results for your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "model",
+          "type": "String",
+          "info": "Optional: The unique alphanumeric identifier for your custom model. You can also choose from the following public models: en-news: trained on English news content (default); es-news: trained on Spanish news content; ar-news: trained on Arabic news content."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTypedRelationsFromText",
+      "description": "Use custom models to identify typed relations between detected entities in plain text. Source text in Typed Relations calls is truncated to 5 KB. Typed relations identify different types of connections between detected entities. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results for your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "model",
+          "type": "String",
+          "info": "Optional: The unique alphanumeric identifier for your custom model. You can also choose from the following public models: en-news: trained on English news content (default); es-news: trained on Spanish news content; ar-news: trained on Arabic news content."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTextSentimentFromHtml",
+      "description": "Analyze the overall sentiment of HTML document. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
       "args": [
         {
           "name": "apiKey",
@@ -881,23 +1930,13 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response.."
         },
         {
           "name": "showSourceText",
@@ -932,8 +1971,85 @@
       ]
     },
     {
-      "name": "getTargetedSentiment",
-      "description": "Analyze sentiment for targeted phrases in HTML document, webpage URL or plain TEXT. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
+      "name": "getTextSentimentFromUrl",
+      "description": "Analyze the overall sentiment of a webpage. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTextSentimentFromText",
+      "description": "Analyze the overall sentiment of plain text. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTargetedSentimentFromHtml",
+      "description": "Analyze sentiment for targeted phrases in an HTML document. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
       "args": [
         {
           "name": "apiKey",
@@ -942,18 +2058,8 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
-          "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
-        },
-        {
-          "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "info": "Required: File with HTML content."
         },
         {
           "name": "targets",
@@ -961,9 +2067,9 @@
           "info": "Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
         },
         {
-          "name": "urlForResponse",
+          "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "showSourceText",
@@ -998,8 +2104,8 @@
       ]
     },
     {
-      "name": "getRankedTaxonomy",
-      "description": "Categorize an HTML document, webpage or plain text into a 5-level taxonomy. Supported languages: English.",
+      "name": "getTargetedSentimentFromUrl",
+      "description": "Analyze sentiment for targeted phrases on a webpage. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
       "args": [
         {
           "name": "apiKey",
@@ -1007,24 +2113,106 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url and text parameters not provided."
-        },
-        {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html and text parameters not provided."
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "targets",
+          "type": "String",
+          "info": "Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTargetedSentimentFromText",
+      "description": "Analyze sentiment for targeted phrases in plain text. Supported languages: Arabic, English, French, German, Italian, Portuguese, Russian, Spanish.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
         },
         {
           "name": "text",
-          "type": "File",
-          "info": "Optional: Text content. Required if html and url parameters not provided."
+          "type": "String",
+          "info": "Required: File with text content."
         },
         {
-          "name": "urlForResponse",
+          "name": "targets",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter."
+          "info": "Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|..."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedTaxonomyFromHtml",
+      "description": "Categorize an HTML document into a 5-level taxonomy. Supported languages: English.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "showSourceText",
@@ -1059,8 +2247,85 @@
       ]
     },
     {
-      "name": "getText",
-      "description": "Extract primary text content from a webpage or from an HTML document. Cleaned page text is obtained by default in other HTML and URL functions. You can view the results of page cleaning in responses from most of the other methods by passing showSourceText=1.",
+      "name": "getRankedTaxonomyFromUrl",
+      "description": "Categorize a webpage into a 5-level taxonomy. Supported languages: English.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRankedTaxonomyFromText",
+      "description": "Categorize plain text into a 5-level taxonomy. Supported languages: English.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "Required: File with text content."
+        },
+        {
+          "name": "showSourceText",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTextFromHtml",
+      "description": "Extract primary text content from an HTML document. Cleaned page text is obtained by default in other HTML and URL functions. You can view the results of page cleaning in responses from most of the other methods by passing showSourceText=1.",
       "args": [
         {
           "name": "apiKey",
@@ -1069,18 +2334,13 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
-        },
-        {
-          "name": "urlForResponse",
-          "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Optional: Input here will appear as the url value in the response."
         },
         {
           "name": "showSourceText",
@@ -1125,8 +2385,8 @@
       ]
     },
     {
-      "name": "getRawText",
-      "description": "Extract the plain text from a webpage or from an HTML document.",
+      "name": "getTextFromUrl",
+      "description": "Extract primary text content from a webpage. Cleaned page text is obtained by default in other HTML and URL functions. You can view the results of page cleaning in responses from most of the other methods by passing showSourceText=1.",
       "args": [
         {
           "name": "apiKey",
@@ -1134,19 +2394,39 @@
           "info": "Required: API key obtained from AlchemyAPI."
         },
         {
-          "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
-        },
-        {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
+          "info": "Required: HTTP URL."
         },
         {
-          "name": "urlForResponse",
+          "name": "showSourceText",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Optional: Set this to 1 to include the source text in the response."
+        },
+        {
+          "name": "extractLinks",
+          "type": "String",
+          "info": "Optional: Set this to 1 to include hyperlinks in the extracted text."
+        },
+        {
+          "name": "useMetadata",
+          "type": "String",
+          "info": "Optional: Set this to 0 to ignore description information in webpage metadata."
+        },
+        {
+          "name": "cquery",
+          "type": "String",
+          "info": "Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "xpath",
+          "type": "String",
+          "info": "Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter."
+        },
+        {
+          "name": "sourceText",
+          "type": "String",
+          "info": "Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter."
         }
       ],
       "callbacks": [
@@ -1161,8 +2441,8 @@
       ]
     },
     {
-      "name": "getTitle",
-      "description": "Extract the page title from a webpage or from an HTML document.",
+      "name": "getRawTextFromHtml",
+      "description": "Extract the plain text from an HTML document.",
       "args": [
         {
           "name": "apiKey",
@@ -1171,18 +2451,101 @@
         },
         {
           "name": "html",
-          "type": "File",
-          "info": "Optional: HTML content. Required if url parameter not provided."
+          "type": "String",
+          "info": "Required: File with HTML content."
         },
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: HTTP URL. Required if html parameter not provided."
+          "info": "Optional: Input here will appear as the url value in the response."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
         },
         {
-          "name": "urlForResponse",
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRawTextFromUrl",
+      "description": "Extract the plain text from a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html parameter."
+          "info": "Required: HTTP URL."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTitleFromHtml",
+      "description": "Extract the page title from an HTML document.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "html",
+          "type": "String",
+          "info": "Required: File with HTML content."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Optional: Input here will appear as the url value in the response."
+        },
+        {
+          "name": "useMetadata",
+          "type": "String",
+          "info": "Optional: 1 or 0. Whether to use title information from the web page metadata (default = 1: enabled)."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTitleFromUrl",
+      "description": "Extract the page title from a webpage.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from AlchemyAPI."
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Required: HTTP URL."
         },
         {
           "name": "useMetadata",

@@ -1,7 +1,7 @@
 {
   "package": "AlchemyText",
   "tagline": "Alchemy Text API",
-  "description": "AlchemyAPI offers 12 API functions as part of its text analysis service, each of which uses sophisticated natural language processing techniques to analyze your content and add high-level semantic information.",
+  "description": "AlchemyAPI offers functions as part of its text analysis service, each of which uses sophisticated natural language processing techniques to analyze your content and add high-level semantic information.",
   "image": "https://files.readme.io/A1pb2VlDQUa7c3gNVSYa_alchemyapi_favicon.jpeg",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-AlchemyText-package",
   "accounts": {

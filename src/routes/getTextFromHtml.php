@@ -14,7 +14,7 @@ $app->post('/api/AlchemyText/getTextFromHtml', function ($request, $response, $a
     if(!empty($post_data['args']['html'])) {
         $file = file_get_contents($post_data['args']['html']);
         $body['html'] = $file;
-        $query_str = 'https://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey='.$post_data['args']['apiKey'];
+        $query_str = 'https://gateway-a.watsonplatform.net/calls/html/HTMLGetText?apikey='.$post_data['args']['apiKey'];
     }
     
     if(!empty($post_data['args']['url'])) {

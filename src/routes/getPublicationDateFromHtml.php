@@ -14,7 +14,7 @@ $app->post('/api/AlchemyText/getPublicationDateFromHtml', function ($request, $r
     if(!empty($post_data['args']['html'])) {
         $file = file_get_contents($post_data['args']['html']);
         $body['html'] = $file;
-        $query_str = 'https://gateway-a.watsonplatform.net/calls/url/URLGetPubDate?apikey='.$post_data['args']['apiKey'];
+        $query_str = 'https://gateway-a.watsonplatform.net/calls/html/HTMLGetPubDate?apikey='.$post_data['args']['apiKey'];
     }
     
     if(!empty($post_data['args']['url'])) {

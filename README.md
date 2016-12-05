@@ -295,7 +295,7 @@ Extract RSS/ATOM feed links from an HTML document.
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
 | html  | File       | Required: File with HTML content.
-| url   | String     | Optional: Input here will appear as the url value in the response.
+| url   | String     | Required: Input here will appear as the url value in the response.
 
 
 ## AlchemyText.getFeedLinksFromUrl
@@ -402,7 +402,7 @@ Extract microformats from an HTML document.
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from AlchemyAPI.
 | html  | File       | Required: File with HTML content.
-| url   | String     | Optional: Input here will appear as the url value in the response.
+| url   | String     | Required: Input here will appear as the url value in the response.
 
 
 ## AlchemyText.getMicroformatDataFromUrl

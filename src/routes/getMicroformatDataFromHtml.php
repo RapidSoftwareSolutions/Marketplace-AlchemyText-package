@@ -3,7 +3,7 @@
 $app->post('/api/AlchemyText/getMicroformatDataFromHtml', function ($request, $response, $args) {
     
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey','html']);
+    $validateRes = $checkRequest->validate($request, ['apiKey','html','url']);
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {

@@ -1038,7 +1038,7 @@
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response."
+          "info": "Required: Input here will appear as the url value in the response."
         }
       ],
       "callbacks": [
@@ -1421,7 +1421,7 @@
         {
           "name": "url",
           "type": "String",
-          "info": "Optional: Input here will appear as the url value in the response."
+          "info": "Required: Input here will appear as the url value in the response."
         }
       ],
       "callbacks": [

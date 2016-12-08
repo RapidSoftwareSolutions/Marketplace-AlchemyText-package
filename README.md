@@ -1,5 +1,5 @@
 # AlchemyText Package
-AlchemyAPI offers functions as part of its text analysis service, each of which uses sophisticated natural language processing techniques to analyze your content and add high-level semantic information.
+Analyze text for sentiment and broader concepts.
 * Domain: alchemyapi.com
 * Credentials: apiKey
 

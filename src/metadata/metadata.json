@@ -29,7 +29,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response",
                     "required": false
                 }],
@@ -60,7 +61,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response",
                     "required": false
                 }],
@@ -91,7 +93,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response",
                     "required": false
                 }],
@@ -174,17 +177,20 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -230,17 +236,20 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -291,17 +300,20 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -332,12 +344,13 @@
                     "required": false
                 }, {
                     "name": "anchorDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date to use as \"today\" when interpreting phrases in the text like \"next tuesday.\". Format: yyyy-mm-dd hh:mm:ss",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -363,12 +376,13 @@
                     "required": true
                 }, {
                     "name": "anchorDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date to use as \"today\" when interpreting phrases in the text like \"next tuesday.\". Format: yyyy-mm-dd hh:mm:ss",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -394,12 +408,13 @@
                     "required": true
                 }, {
                     "name": "anchorDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date to use as \"today\" when interpreting phrases in the text like \"next tuesday.\". Format: yyyy-mm-dd hh:mm:ss",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -430,7 +445,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -471,7 +487,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -517,7 +534,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -553,7 +571,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -599,7 +618,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -645,7 +665,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -686,47 +707,56 @@
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "quotations",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include quotations that are linked to detected entities.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
                     "name": "structuredEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress.",
                     "required": false
                 }, {
@@ -777,47 +807,56 @@
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "quotations",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include quotations that are linked to detected entities.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
                     "name": "structuredEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress.",
                     "required": false
                 }, {
@@ -868,47 +907,56 @@
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "quotations",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include quotations that are linked to detected entities.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
                     "name": "structuredEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress.",
                     "required": false
                 }],
@@ -991,22 +1039,26 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1052,22 +1104,26 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1118,22 +1174,26 @@
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "emotion",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze emotions associated with each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each detected entity. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1164,7 +1224,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1205,7 +1266,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1251,7 +1313,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1381,52 +1444,62 @@
                     "required": false
                 }, {
                     "name": "keywords",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "entities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify named entities in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "requireEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to restrict results to relations that contain at least one named entity.",
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each result. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentimentExcludeEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to exclude named entity text from sentiment analysis. For exapmle, do not analyze \"New\" in \"New York\".",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1472,52 +1545,62 @@
                     "required": false
                 }, {
                     "name": "keywords",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "entities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify named entities in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "requireEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to restrict results to relations that contain at least one named entity.",
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each result. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentimentExcludeEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to exclude named entity text from sentiment analysis. For exapmle, do not analyze \"New\" in \"New York\".",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1568,52 +1651,62 @@
                     "required": false
                 }, {
                     "name": "keywords",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify keywords in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "entities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to identify named entities in detected relations. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "requireEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to restrict results to relations that contain at least one named entity.",
                     "required": false
                 }, {
                     "name": "coreference",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).",
                     "required": false
                 }, {
                     "name": "disambiguate",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide entity disambiguation information in the response.",
                     "required": false
                 }, {
                     "name": "knowledgeGraph",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "linkedData",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to hide Linked Data content links in the response.",
                     "required": false
                 }, {
                     "name": "sentiment",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to analyze the sentiment towards each result. This incurs an additional transaction charge.",
                     "required": false
                 }, {
                     "name": "sentimentExcludeEntities",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to exclude named entity text from sentiment analysis. For exapmle, do not analyze \"New\" in \"New York\".",
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1649,7 +1742,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1680,7 +1774,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1716,7 +1811,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1747,7 +1843,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1788,7 +1885,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1829,7 +1927,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1865,7 +1964,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1911,7 +2011,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -1962,7 +2063,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -1993,7 +2095,8 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -2034,7 +2137,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
@@ -2075,7 +2179,8 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }],
@@ -2106,17 +2211,20 @@
                     "required": false
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
                     "name": "extractLinks",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include hyperlinks in the extracted text.",
                     "required": false
                 }, {
                     "name": "useMetadata",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to ignore description information in webpage metadata.",
                     "required": false
                 }, {
@@ -2157,17 +2265,20 @@
                     "required": true
                 }, {
                     "name": "showSourceText",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include the source text in the response.",
                     "required": false
                 }, {
                     "name": "extractLinks",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["1"],
                     "info": "Set this to 1 to include hyperlinks in the extracted text.",
                     "required": false
                 }, {
                     "name": "useMetadata",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["0"],
                     "info": "Set this to 0 to ignore description information in webpage metadata.",
                     "required": false
                 }, {

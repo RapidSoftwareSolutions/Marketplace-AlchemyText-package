@@ -24,7 +24,7 @@ $app->post('/api/AlchemyText/getTargetedSentimentFromText', function ($request, 
         $body['showSourceText'] = urlencode($post_data['args']['showSourceText']);
     }
 
-    $body['targets'] = is_array($post_data['args']['targets'])? urlencode (implode("|", $post_data['args']['targets'])): urlencode($post_data['args']['targets']);
+    $body['targets'] = is_array($post_data['args']['targets'])? implode("|", $post_data['args']['targets']): $post_data['args']['targets'];
     $body['outputMode'] = 'json';  
     
     $client = $this->httpClient;

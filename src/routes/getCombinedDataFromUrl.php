@@ -16,7 +16,7 @@ $app->post('/api/AlchemyText/getCombinedDataFromUrl', function ($request, $respo
         $query_str = 'https://gateway-a.watsonplatform.net/calls/url/URLGetCombinedData?apikey='.$post_data['args']['apiKey'];
     }
     if(!empty($post_data['args']['extract'])) {
-        $body['extract'] = is_array($post_data['args']['extract'])? implode(",", $post_data['args']['extract']): urlencode($post_data['args']['extract']);
+        $body['extract'] = is_array($post_data['args']['extract'])? urlencode(implode("|", $post_data['args']['extract'])): urlencode($post_data['args']['extract']);
     }
     if(!empty($post_data['args']['showSourceText'])) {
         $body['showSourceText'] = urlencode($post_data['args']['showSourceText']);

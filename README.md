@@ -2,7 +2,7 @@
 
 # AlchemyText Package
 Analyze text for sentiment and broader concepts.
-* Domain: alchemyapi.com
+* Domain: [Alchemy](http://alchemyapi.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
@@ -19,7 +19,7 @@ Analyze an HTML with multiple text analysis operations.
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | html          | File       | Required: File with HTML content.
-| extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
+| extract       | String     | Optional: Array of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
 
@@ -30,7 +30,7 @@ Analyze an URL with multiple text analysis operations.
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | url           | String     | Required: HTTP URL.
-| extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
+| extract       | String     | Optional: Array of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
 
@@ -41,7 +41,7 @@ Analyze a TEXT with multiple text analysis operations.
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | text          | File       | Required: File with Text content.
-| extract       | String     | Optional: Comma separated list of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
+| extract       | String     | Optional: Array of any of the following methods: authors, concepts (default), dates, doc-emotion, entities (default), feeds, keywords (default), pub-date, relations, typed-rels, doc-sentiment, taxonomy (default), title
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response
 
 
@@ -78,7 +78,7 @@ Extract concepts from text of an HTML document. Supported languages: English, Sp
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts). Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedConceptsFromUrl
@@ -94,7 +94,7 @@ Extract concepts from a webpage. Supported languages: English, Spanish
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedConceptsFromText
@@ -156,7 +156,7 @@ Detect emotions implied in the text of an HTML document. Supported languages: En
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getEmotionFromUrl
@@ -169,7 +169,7 @@ Detect emotions implied in the text on a webpage. Supported languages: English
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getEmotionFromText
@@ -190,12 +190,12 @@ Detect emotions directed toward targeted phrases in an HTML document. Supported 
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | html          | File       | Required: File with HTML content.
-| targets       | String     | Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response. Parameter is only used if indicated html or text parameter.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTargetedEmotionFromUrl
@@ -205,11 +205,11 @@ Detect emotions directed toward targeted phrases on webpage. Supported languages
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | url           | String     | Required: HTTP URL
-| targets       | String     | Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTargetedEmotionFromText
@@ -219,7 +219,7 @@ Detect emotions directed toward targeted phrases in text. Supported languages: E
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | text          | String     | Required: Text content.
-| targets       | String     | Required: Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
 
@@ -231,7 +231,7 @@ Extract entities from an HTML document. Supported languages: English, French, Ge
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
 | html              | File       | Required: File with HTML content.
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
-| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details.
+| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. You can also choose from the following public models: en-news: trained on English news content, es-news: trained on Spanish news content, ar-news: trained on Arabic news content
 | url               | String     | Optional: Input here will appear as the url value in the response.
 | coreference       | String     | Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).
 | disambiguate      | String     | Optional: Set this to 0 to hide entity disambiguation information in the response.
@@ -244,7 +244,7 @@ Extract entities from an HTML document. Supported languages: English, French, Ge
 | structuredEntities| String     | Optional: Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress.
 | cquery            | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath             | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText        | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText        | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedNamedEntitiesFromUrl
@@ -255,7 +255,7 @@ Extract entities from a webpage. Supported languages: English, French, German, I
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
 | url               | String     | Required: HTTP URL
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
-| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details.
+| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. You can also choose from the following public models: en-news: trained on English news content, es-news: trained on Spanish news content, ar-news: trained on Arabic news content
 | coreference       | String     | Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).
 | disambiguate      | String     | Optional: Set this to 0 to hide entity disambiguation information in the response.
 | knowledgeGraph    | String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -267,7 +267,7 @@ Extract entities from a webpage. Supported languages: English, French, German, I
 | structuredEntities| String     | Optional: Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress.
 | cquery            | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath             | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText        | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText        | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedNamedEntitiesFromText
@@ -278,7 +278,7 @@ Extract entities from plain text. Supported languages: English, French, German, 
 | apiKey            | credentials| Required: API key obtained from AlchemyAPI.
 | text              | File       | Required: File with text content.
 | maxRetrieve       | String     | Optional: Maximum number of entities to return (default = 50)
-| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. See README for more details.
+| model             | String     | Optional: Specify a custom model ID here to override the default Alchemy entity extraction model. You can also choose from the following public models: en-news: trained on English news content, es-news: trained on Spanish news content, ar-news: trained on Arabic news content
 | coreference       | String     | Optional: Set this to 0 to treat coreferences as separate entities (coreferences are resolved into detected entities by default).
 | disambiguate      | String     | Optional: Set this to 0 to hide entity disambiguation information in the response.
 | knowledgeGraph    | String     | Optional: Set this to 1 to include knowledge graph information in the results. This incurs an additional transaction charge.
@@ -324,7 +324,7 @@ Extract keywords from an HTML document. Supported languages: English, French, Ge
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedKeywordsFromUrl
@@ -341,11 +341,11 @@ Extract keywords from a webpage. Supported languages: English, French, German, I
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedKeywordsFromText
-Extract keywords from a webpage. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.
+Extract keywords from a plain text. Supported languages: English, French, German, Italian, Portuguese, Russian, Spanish, Swedish.
 
 | Field         | Type       | Description
 |---------------|------------|----------
@@ -370,7 +370,7 @@ Detect the language of an HTML document.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getLanguageFromUrl
@@ -383,7 +383,7 @@ Detect the language of a webpage.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getLanguageFromText
@@ -456,7 +456,7 @@ Extract Subject-Action-Object relations from an HTML document. Supported languag
 | showSourceText          | String     | Optional: Set this to 1 to include the source text in the response.
 | cquery                  | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath                   | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText              | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText              | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRelationsFromUrl
@@ -479,7 +479,7 @@ Extract Subject-Action-Object relations from a webpage. Supported languages: Eng
 | showSourceText          | String     | Optional: Set this to 1 to include the source text in the response.
 | cquery                  | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath                   | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText              | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText              | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRelationsFromText
@@ -549,7 +549,7 @@ Analyze the overall sentiment of HTML document. Supported languages: Arabic, Eng
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTextSentimentFromUrl
@@ -562,7 +562,7 @@ Analyze the overall sentiment of a webpage. Supported languages: Arabic, English
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTextSentimentFromText
@@ -582,12 +582,12 @@ Analyze sentiment for targeted phrases in an HTML document. Supported languages:
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | html          | File       | Required: File with HTML content.
-| targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTargetedSentimentFromUrl
@@ -597,11 +597,11 @@ Analyze sentiment for targeted phrases on a webpage. Supported languages: Arabic
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | url           | String     | Required: HTTP URL.
-| targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTargetedSentimentFromText
@@ -611,7 +611,7 @@ Analyze sentiment for targeted phrases in plain text. Supported languages: Arabi
 |---------------|------------|----------
 | apiKey        | credentials| Required: API key obtained from AlchemyAPI.
 | text          | File       | Required: File with text content.
-| targets       | String     | Required: Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
+| targets       | String     | Required: Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...
 | url           | String     | Optional: Input here will appear as the url value in the response.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 
@@ -627,7 +627,7 @@ Categorize an HTML document into a 5-level taxonomy. Supported languages: Englis
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedTaxonomyFromUrl
@@ -640,7 +640,7 @@ Categorize a webpage into a 5-level taxonomy. Supported languages: English.
 | showSourceText| String     | Optional: Set this to 1 to include the source text in the response.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRankedTaxonomyFromText
@@ -666,7 +666,7 @@ Extract primary text content from an HTML document. Cleaned page text is obtaine
 | useMetadata   | String     | Optional: Set this to 0 to ignore description information in webpage metadata.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getTextFromUrl
@@ -681,7 +681,7 @@ Extract primary text content from a webpage. Cleaned page text is obtained by de
 | useMetadata   | String     | Optional: Set this to 0 to ignore description information in webpage metadata.
 | cquery        | String     | Optional: A visual constraints query to apply to the web page. Required when sourceText is set to cquery. For more details visit http://www.ibm.com/watson/developercloud/doc/alchemylanguage/visual_constraints.shtml. Parameter is only used if indicated html or url parameter.
 | xpath         | String     | Optional: An XPath query to apply to the web page. Required when sourceText is set to one of the XPath values. Parameter is only used if indicated html or url parameter.
-| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see README. Parameter is only used if indicated html or url parameter.
+| sourceText    | String     | Optional: How to obtain the source text from the webpage. For more details see [This page](https://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#concepts) Parameter is only used if indicated html or url parameter.
 
 
 ## AlchemyText.getRawTextFromHtml

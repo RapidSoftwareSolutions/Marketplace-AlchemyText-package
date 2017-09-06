@@ -863,7 +863,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {
@@ -944,7 +944,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {
@@ -1019,7 +1019,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will analyze emotion directed toward each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {
@@ -2879,7 +2879,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {
@@ -2960,7 +2960,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {
@@ -3035,7 +3035,7 @@
             "type": "String",
             "info": "Single target"
           },
-          "info": "Pipe delimited list of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. Format: phrase1|phrase2|...",
+          "info": "Array of phrases. The service will return sentiment information for each phrase that is found in the source text. Supports up to 20 phrases. ",
           "required": true
         },
         {

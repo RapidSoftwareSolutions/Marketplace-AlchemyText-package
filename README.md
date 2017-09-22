@@ -6,10 +6,10 @@ Analyze text for sentiment and broader concepts.
 * Credentials: apiKey
 
 ## How to get credentials: 
-0. Go to AlchemyAPI and [register your app](https://console.ng.bluemix.net/registration/) 
-1. Choose AlchemyAPI from [categories](https://console.ng.bluemix.net/catalog/?taxonomyNavigation=applications)
-2. Connect AlchemyAPI to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
-3. Click on 'Service Credentials' tab to see your apiKey.
+1. Go to AlchemyAPI and [register your app](https://console.ng.bluemix.net/registration/) 
+2. Choose Natural Language Understanding from [categories](https://console.ng.bluemix.net/catalog/?taxonomyNavigation=applications)
+3. Connect Natural Language Understanding to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
+4. Click on 'Service Credentials' tab to see your apiKey.
 
 
 ## AlchemyText.getCombinedDataFromHtml

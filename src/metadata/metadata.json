@@ -26,6 +26,12 @@
       "apiKey"
     ]
   },
+  "steps": [
+    "Go to AlchemyAPI and register your app (https://console.ng.bluemix.net/registration/)",
+    "Choose Natural Language Understanding from categories (https://console.ng.bluemix.net/catalog/?taxonomyNavigation=applications)",
+    "Connect Natural Language Understanding to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page",
+    "Click on 'Service Credentials' tab to see your apiKey"
+  ],
   "blocks": [
     {
       "name": "getCombinedDataFromHtml",
